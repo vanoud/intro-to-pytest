@@ -1,0 +1,22 @@
+name : test
+
+on: push 
+jobs:
+  test-app:
+    runs-on: ubuntu-latest
+    steps:
+    - name : recuperation du repo
+      uses: actions/checkout@v3
+    - uses: actions/setup-python
+      with:
+        python-version: '3.x'
+      name: instal des dep
+      run: pip install -r requierements.txt
+    - name: test 
+      run: pytest > report.txt
+    - name: recup des logs 
+      uses: actions/upload-artifact@v3
+      with:
+        name: report 
+        path:  ./
+
