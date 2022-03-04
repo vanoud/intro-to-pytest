@@ -1,20 +1,12 @@
-# This is a basic workflow to help you get started with Actions
 
 name: test pushing docker hub pytest
 
-# Controls when the workflow wi ll run
+
 on: 
   pull_request:
-    types: [closed]
+    types:
+      - closed
     
-  # Triggers the w orkflow on push or pull reques t events but only for the master branch
-  # push:
-  #   branches: [ master ]
-  # pull_request:
-  #   branches: [ master ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  # workflow_dispatch:
 env: 
   APP_VERSION: "1.0.0"
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -30,8 +22,8 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE,  so your job can access it
     steps:
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v3
+    # - name: Create Pull Request
+    #   uses: peter-evans/create-pull-request@v3
     - name: recuperation du repo 
       uses: actions/checkout@v3
     - name: version node
