@@ -26,10 +26,10 @@ jobs:
     #   uses: peter-evans/create-pull-request@v3
     - name: recuperation du repo 
       uses: actions/checkout@v3
-    - name: version node
+    - name: version python
       uses: actions/setup-python
    
-    - name: instal requierements
+    - name: instal requirements
       run: pip install -r requierements.txt
     - name: run pytest 
       run: pytest
