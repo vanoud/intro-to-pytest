@@ -2,10 +2,10 @@
 name: test pushing docker hub pytest
 
 
-on: push
-  # pull_request:
-  #   types:
-  #     - closed
+on: 
+  pull_request:
+    types:
+      - closed
     
 env: 
   APP_VERSION: "1.0.0"
